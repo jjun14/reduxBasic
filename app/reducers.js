@@ -15,22 +15,15 @@ const { SHOW_ALL } = VisibilityFilters
 //   todos: []
 // }
 
-var myTodos = [
-  {id:0, text: 'hey', completed: false},
-  {id:1, text: 'ho', completed: false},
-  {id:2, text: 'let\'s go', completed: false}
-]
-
-
 // separate function for dealing with the state of todos
-function todos(state = myTodos, action){
+function todos(state = myTodos[], action){
   switch (action.type) {
     case ADD_TODO:
       console.log(action);
       return [
         ...state,
         {
-          id: state.length,
+          id: action.id,
           text: action.text,
           completed: false
         }

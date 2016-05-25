@@ -16,9 +16,11 @@ export const VisibilityFilters = {
 }
 
 // actions creators are functions that create actions
+let nextTodoId = 0;
 export function addTodo(text){
   return {
     type: ADD_TODO,
+    id: nextTodoId++,
     text
   }
 }
